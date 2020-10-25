@@ -1,0 +1,34 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Users Management Page</title>
+        <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+        <script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+        <script type="text/javascript" th:src="@{/utils.js}"></script>
+    </head>
+    <body>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Login</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user:${users}">
+                    <td th:text="${user.id}"></td>
+                    <td th:text="${user.firstName}"></td>
+                    <td th:text="${user.lastName}"></td>
+                    <td th:text="${user.login}"></td>
+                    <td>
+                        <button type="button" class="btn btn-outline-success" th:onclick="'javascript:onEditClicked('+${user.id}+');'">Edit</button>
+                        <button type="button" class="btn btn-outline-danger button-delete" th:id="${'delete-' + user.id}" th:data-id="${user.id}">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
