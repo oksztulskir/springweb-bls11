@@ -1,6 +1,6 @@
 package com.sda.mappers;
 
-import com.sda.dto.UpdateUserDto;
+import com.sda.dto.CreateOrUpdateUserDto;
 import com.sda.model.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -11,7 +11,7 @@ import org.mapstruct.factory.Mappers;
 public interface UserMapper {
     UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
 
-    User toEntity(UpdateUserDto dto);
+    User toEntity(CreateOrUpdateUserDto dto);
 
-    UpdateUserDto toDto(User entity);
+    CreateOrUpdateUserDto toDto(User entity);
 }

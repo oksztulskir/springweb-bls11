@@ -2,8 +2,29 @@ function onEditClicked(userId) {
      window.location.href = '/users/' + userId;
 }
 
-$(document).ready(() => {
+function logout() {
+    window.location.href = '/auth/logout';
+}
 
+function showOrHideSuccessModal(successMsg) {
+    return successMsg.length > 0;
+}
+
+function initForm() {
+    $('#successModal')
+    .toggle(showOrHideSuccessModal($('#successMsg').val()));
+}
+
+function closeModal() {
+    $('#successModal').toggle(false);
+}
+
+function createUserOnClick() {
+    window.location.href = '/users/create';
+}
+
+$(document).ready(() => {
+    initForm();
     $(".button-delete").click((event) => {
         console.info('Element clicked with id: ', event.target.id);
         const id = event.target.getAttribute('data-id');
@@ -20,5 +41,8 @@ $(document).ready(() => {
         .catch((error) => {
             console.error('Error during user deletion: ', error);
         });
-    })
+    });
+
+
+
 });

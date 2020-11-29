@@ -23,6 +23,11 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     private String lastName;
 
+    @Column(nullable = false)
+    private String email;
+
+    private String password;
+
     @ManyToMany
     @JoinTable(name = "user_address", joinColumns = {
             @JoinColumn(name = "user_id", referencedColumnName = "id")
@@ -31,4 +36,6 @@ public class User extends BaseEntity {
     })
     private Set<Address> addresses;
 
+    @Column(nullable = false)
+    private boolean enabled;
 }

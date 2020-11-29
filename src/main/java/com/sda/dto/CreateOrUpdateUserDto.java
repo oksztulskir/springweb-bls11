@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UpdateUserDto {
+public class CreateOrUpdateUserDto {
     private Long id;
 
     private String login;
@@ -13,4 +13,8 @@ public class UpdateUserDto {
     private String firstName;
 
     private String lastName;
+
+    private String email;
+
+    private String password;
 }

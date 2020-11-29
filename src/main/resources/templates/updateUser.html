@@ -20,7 +20,14 @@
                     <label for="login">Login</label>
                     <input type="text" class="form-control" th:field="*{login}" id="login" placeholder="Provide login">
                 </div>
-
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" th:field="*{email}" id="email" placeholder="Provide email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="text" class="form-control" th:field="*{password}" id="password" placeholder="Provide password">
+                </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
